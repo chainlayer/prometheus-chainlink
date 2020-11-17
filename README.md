@@ -1,4 +1,4 @@
-# Guide to setup prometheus and grafana with your chainlink setup
+# Prometheus and grafana with Chainlink Tutorial
 
 ## Install prerequisites
 For this tutorial you need a working Prometheus and Grafana setup. Prometheus needs to run on a machine with sufficient disk (or at least the ability to increase it preferably online), once you're hooked to it you will want to add more metrics :)
