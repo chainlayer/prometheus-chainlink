@@ -54,3 +54,17 @@ Now import the example dashboard by saving the dashboard.json file in this repos
 
 You're all set, you should see the following screen
 ![Add dashboard](screen4.png)
+
+There is one extra panel on the dashboard that retrieved metrics from your ethereum node if you set that up to send export metrics as well. This blogpost has some excellent information on that topic:
+https://blog.ethereum.org/2019/07/10/geth-v1-9-0/
+
+### Alerting
+Both Grafana and Prometheus have lots of alerting options to explore. These metrics are good to monitor on:
+
+- Ethereum balance dropping below certain level
+- New heads per minute dropping below 1 for more than 5 minutes (this means your chainlink node is not getting new heads from Ethereum)
+- Head tracker heads in queue should be 0 most of the time, so alerting when its averaging > 1 for more than 5 minutes
+- Head tracker callback execution time: depending on your setup you should have this value well below 1 second (between 100/300ms). If its averaging above 1s you want to check your ethereum connection and any bottlenecks on postgres cpu/memory wise
+- Heads dropped should be 0, higher values indicate your node can't keep up with the new heads
+
+There are a lot more interesting metrics to explore, like some metrics on fluxmonitor jobs
