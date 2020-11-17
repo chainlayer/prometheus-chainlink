@@ -46,4 +46,11 @@ change the target accordingly and restart prometheus with `service prometheus re
 ### Configure grafana datasource
 Now login to your grafana install with admin/admin and change your password. Click the add new datasource link and select prometheus. Enter `http://localhost:9090` as url and click `save & test`. 
 
-![GitHub Logo](/images/screen1.png)
+![Add datasource](screen1.png)
+
+Now import the example dashboard by saving the dashboard.json file in this repository and uploading it on grafana
+![Add dashboard](screen2.png)
+![Add dashboard](screen3.png)
+
+You're all set, you should see the following screen
+![Add dashboard](screen4.png)
