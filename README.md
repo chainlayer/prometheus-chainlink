@@ -27,7 +27,7 @@ ARGS="--web.listen-address=127.0.0.1:9090"
 ```
 
 ### Configure Prometheus
-Now we need to tell Prometheus to scrape the metrics of the chainlink node. Chainlink exposes metrics on the /metrics endpoint of the ui, by default thats http://localhost:6688/metrics. One important thing to notice is that prometheus cannot scrape from https endpoints so if you configured https you will also need to open your http endpoint specifically for prometheus.
+Now we need to tell Prometheus to scrape the metrics of the chainlink node. Chainlink exposes metrics on the /metrics endpoint of the ui, by default thats http://localhost:6688/metrics. One important thing to notice is that prometheus cannot scrape from https endpoints without specifying a scheme:https and possibly a TLS config. If your node runs on SSL you need to configure that.
 
 Telling prometheus to scrape something is done by editing the /etc/prometheus/prometheus.yml file and adding these lines:
 ```
